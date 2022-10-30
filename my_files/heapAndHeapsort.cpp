@@ -1,15 +1,16 @@
 //not sure if the swap works
 
 #include <iostream>
+#include <climits>
 #include <cmath>
 using namespace std; 
 
 template <typename T>
-void swap(T one, T two){
+void swapp(T & one, T & two){
     T tmp = one; 
     one = two; 
     two = tmp; 
-}
+};
 
 template <typename T>
 class minHeap{
@@ -28,7 +29,9 @@ class minHeap{
         }
     public: 
         //constructors
-        minHeap(int len): length(len){};
+        minHeap(int len): length(len){
+            heapsize = 0; 
+        };
         minHeap(int len, T * arr, int n):length(len), heapArray(arr), heapsize(n){}; 
 
         //getters
@@ -65,7 +68,7 @@ class minHeap{
             return this->rightOf(i); 
         }
         int getParent(int i){
-            return this->parenttOf(i); 
+            return this->parentOf(i); 
         }
 
         //methods
@@ -73,10 +76,10 @@ class minHeap{
             int smallest = i; 
             int left = arr.getLeft(i);
             int right = arr.getRight(i); 
-            if((left <= arr.getHeapsize()) && (arr.getEl(left).getKey() < arr.getEl(i).getKey()){
+            if((left <= arr.getHeapsize()) && (arr.getEl(left).getKey() < arr.getEl(i).getKey())){
                 smallest = left; 
             }
-            if(right <= arr.getHeapsize())&& (arr.getEl(right).getKey()<arr.getEl(smallest).getKey()){
+            if((right <= arr.getHeapsize())&& (arr.getEl(right).getKey()<arr.getEl(smallest).getKey())){
                 smallest = right; 
             }
 
@@ -88,12 +91,19 @@ class minHeap{
 
         void buildMinHeap(minHeap * arr, int arrLen){
             arr.getHeapsize() = arrLen;
-            for(int i = floor(arrLen/2)); i >=1; i--){
+            for(int i = floor(arrLen/2); i >=1; i--){
                 minHeapify(arr, i);
             }
         };
 
-        void minHeapInsert(){
+        void minHeapInsert(T obj){
+            cout << "calling decrease key1"<<endl; 
+            setHeapsize(getHeapsize()+1); 
+            T newItem; //define empty constructor for heap object
+            newItem.setKey(INT_MAX);
+            heapArray[getHeapsize()] = newItem;
+            cout << "calling decrease key2"<<endl; 
+            decreaseKey(getHeapsize(), obj.getKey()); 
 
         };
 
@@ -109,12 +119,12 @@ class minHeap{
         };
 
         void decreaseKey(int i, T key){
-            if(key < getEl(i).getKey()){
+            if(key.getKey() < getEl(i).getKey()){
                 cout << "ERROR"<<endl; 
             }
-            getEl(i).setKey(key); 
-            while((int i >1) && getParent(i).getKey()>getEl(i).getKey()){
-                swap(getEl(i), getParent(i));
+            getEl(i).setKey(key.getKey()); 
+            while((i >1) && getEl(getParent(i)).getKey()>getEl(i).getKey()){
+                swap(heapArray[i], heapArray[getParent(i)]);
                 i = getParent(i); 
             }
         };
@@ -123,7 +133,7 @@ class minHeap{
         void heapsort(minHeap heapp, int n){
             buildMinHeap(heapp, n);
             for(int i = heapp.getLen(); i >=2; i--){
-                swap(heapp.getEl(0), heapp.getEl(i)); 
+                swapp(heapArray[0], heapArray[i]); 
                 heapp.setHeapsize(heapp.getHeapsize()-1); 
                 minHeapify(heapp, 0); 
             }
@@ -132,8 +142,47 @@ class minHeap{
 
 };
 
+class Songs{
+    private:
+        int key; 
+        string title; 
+        string author;
+    public: 
+        Songs(){}; 
+        Songs(int _k): key(_k){};
+        Songs(int _k, string _t, string _a): key(_k), title(_t), author(_a){};
+        //getters
+        int getKey(){
+            return this->key; 
+        } 
+        string getTitle(){
+            return this->title; 
+        }
+        string getAuthor(){
+            return this->author;
+        }
 
+        //setters
+        void setKey(int i){
+            this->key = i; 
+        }
+        void setTitle(string _t){
+            this->title = _t; 
+        }
+        void setAuthor(string _a){
+            this->author = _a; 
+        }
+};
 
 int main(){
-
+    int N = 20; 
+    minHeap<Songs> myHeap(N);
+    for(int i =0; i < N; i++){
+        cout <<"song ID "<< i <<endl; 
+        Songs mysong(i, "SongTitle1", "NoAuthor"); 
+        myHeap.minHeapInsert(mysong);
+    }
+    for(int i = 0; i < N; i++){
+    cout << (myHeap.getEl(i)).getKey()<<") "<< (myHeap.getEl(i)).getTitle()<<" - " <<(myHeap.getEl(i)).getAuthor()<<endl; 
+    }
 }

@@ -1,0 +1,197 @@
+1-Uk
+2-Italy
+3-France
+4-Switzerland
+5-Monaco
+6-San Marino
+7-Vatican
+8-Croatia
+9-Slovenia
+10-Slovakia
+11-Moldova
+12-Russia
+13-Czech Republic
+14-Lietchenstein
+15-Luxembourg
+16-Belgium
+17-Ireland
+18-Netherlands
+19-Spain
+20-Portugal
+21-Andorra
+22-Germany
+23-Sweden
+24-Poland
+25-Norway
+26-Denmark
+27-Finland
+28-Austria
+29-Albania
+30-North Macedonia
+31-Hungary
+32-Ukraine
+33-Belarus 
+34-Estonia
+35-Lithuania
+36-Latvia
+37-Bulgaria
+38-Romania
+39-Montenegro
+40-Serbia
+41-Kosovo
+42-Bosnia Herzegovina
+43-Greece
+44-Malta
+45-Cyprus
+46-Iceland
+47-China
+48-India
+49-Pakistan
+50-Iran
+51-Iraq
+52-Syria
+53-Lebanon
+54-Jordan
+55-Palestine
+56-Qatar
+57-Turkmenistan
+58-Turkey 
+59-Rojava
+60-Bangladesh
+61-Tajikistan
+62-Kyrgyzkstan
+63-Uzbekistan
+64-Mongolia
+65-Armenia
+66-Azerbajan
+67-Georgia
+68-Bhutan
+69-Nepal
+70-Myanmar
+71-Laos
+72-Vietnam
+73-Cambodia
+74-Taiwan
+75-Thailand
+76-Brunei
+77-Singapore
+78-Indonesia
+79-Afghanistan
+80-Japan
+81-South Korea
+82-North Korea
+83-Malaysia
+84-Sri Lanka
+85-Maldives
+86-East Timor
+87-Philippines
+88-Saudi Arabia
+89-Oman
+90-Yemen
+91-UAE 
+92-Bahrain
+93-Kuwait
+94-Egypt
+95-Libya
+96-Tunisia
+97-Algeria
+98-Morocco 
+99-Western Sahara
+100-Sudan
+101-South Sudan
+102-Djibouti
+103-Benin
+104-Eritrea
+105-Burkina Faso
+106-Ethiopia
+107-Sao Tome
+108-Sierra Leone
+109-Guinea
+110-Somalia
+111-Chad
+112-Mali
+113-Mauritania
+114-Niger
+115-Nigeria
+116-Guinea-Bissau
+117-Senegal
+118-Gambia
+119-Ghana
+120-Togo
+121-Liberia
+122-Ivory Coast
+123-Central African Republic
+124-Gabon
+125-Kenya
+126-Botswana
+127-Rwanda
+128-Guyana
+129-Cameroon
+130-Congo DR 
+131-Congo Republic
+132-Burundi
+133-Zambia
+134-Zimbabwe
+135-Tanzania
+136-Equatorial Guinea
+137-Malawi
+138-Angola
+139-Mozambique
+140-Namibia
+141-Uganda
+142-South Africa
+143-Lesotho
+144-Swaziland
+145-Comoros
+146-Madagascar
+147-Cape Verde
+148-Mauritius
+149-Seychelles
+150-Canada
+151-USA
+152-Cuba
+153-Mexico
+154-Jamaica
+155-Nicaragua
+156-Honduras
+157-El Salvador
+158-Belize
+159-Guatemala
+160-Costa Rica
+161-Panama
+162-Antigua
+163-Saint Kitts
+164-Grenada
+165-Saint Vincent
+166-Saint Lucia
+167-Barbados
+168-Bahamas
+169-Haiti
+170-Dominica
+171-Dominican Republic
+172-Bolivia
+173-Colombia
+174-Venezuela
+175-Suriname
+176-Brasil
+177-Argentina
+178-Paraguay
+179-Uruguay
+180-Chile
+181-Peru
+182-Ecuador
+183-Australia
+184-Papua New Guinea
+185-New Zealand
+186-Micronesia
+187-Palau
+188-Marshall Islands
+189-Tonga
+190-Tuvalu
+191-Vanautu
+192-Fiji
+193-Nauru
+194-Samoa
+195-Solomon Islands
+196-Kiribati
+197-Trinidad

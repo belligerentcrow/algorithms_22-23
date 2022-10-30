@@ -1,0 +1,197 @@
+154-Jamaica
+28-Austria
+188-Marshall Islands
+56-Qatar
+46-Iceland
+1-Uk
+98-Morocco
+137-Malawi
+127-Rwanda
+43-Greece
+133-Zambia
+144-Swaziland
+148-Mauritius
+7-Vatican
+192-Fiji
+2-Italy
+32-Ukraine
+4-Switzerland
+70-Myanmar
+31-Hungary
+36-Latvia
+58-Turkey
+117-Senegal
+94-Egypt
+84-Sri Lanka
+155-Nicaragua
+118-Gambia
+149-Seychelles
+196-Kiribati
+20-Portugal
+169-Haiti
+61-Tajikistan
+81-South Korea
+134-Zimbabwe
+8-Croatia
+54-Jordan
+107-Sao Tome
+182-Ecuador
+100-Sudan
+103-Benin
+193-Nauru
+123-Central African Republic
+115-Nigeria
+77-Singapore
+22-Germany
+145-Comoros
+102-Djibouti
+87-Philippines
+26-Denmark
+147-Cape Verde
+45-Cyprus
+16-Belgium
+90-Yemen
+174-Venezuela
+162-Antigua
+25-Norway
+99-Western Sahara
+181-Peru
+164-Grenada
+93-Kuwait
+64-Mongolia
+124-Gabon
+60-Bangladesh
+146-Madagascar
+179-Uruguay
+176-Brasil
+13-Czech Republic
+165-Saint Vincent
+39-Montenegro
+23-Sweden
+83-Malaysia
+51-Iraq
+68-Bhutan
+12-Russia
+187-Palau
+53-Lebanon
+48-India
+74-Taiwan
+55-Palestine
+172-Bolivia
+38-Romania
+135-Tanzania
+35-Lithuania
+160-Costa Rica
+67-Georgia
+153-Mexico
+10-Slovakia
+141-Uganda
+109-Guinea
+44-Malta
+101-South Sudan
+47-China
+140-Namibia
+15-Luxembourg
+24-Poland
+65-Armenia
+156-Honduras
+108-Sierra Leone
+190-Tuvalu
+57-Turkmenistan
+150-Canada
+5-Monaco
+120-Togo
+27-Finland
+76-Brunei
+3-France
+29-Albania
+11-Moldova
+114-Niger
+95-Libya
+125-Kenya
+59-Rojava
+131-Congo Republic
+42-Bosnia Herzegovina
+122-Ivory Coast
+113-Mauritania
+97-Algeria
+185-New Zealand
+178-Paraguay
+9-Slovenia
+197-Trinidad
+170-Dominica
+110-Somalia
+161-Panama
+73-Cambodia
+186-Micronesia
+143-Lesotho
+139-Mozambique
+142-South Africa
+189-Tonga
+105-Burkina Faso
+17-Ireland
+138-Angola
+33-Belarus
+163-Saint Kitts
+37-Bulgaria
+112-Mali
+151-USA
+72-Vietnam
+41-Kosovo
+34-Estonia
+52-Syria
+91-UAE
+30-North Macedonia
+40-Serbia
+177-Argentina
+171-Dominican Republic
+49-Pakistan
+191-Vanautu
+159-Guatemala
+106-Ethiopia
+96-Tunisia
+129-Cameroon
+104-Eritrea
+86-East Timor
+80-Japan
+69-Nepal
+152-Cuba
+166-Saint Lucia
+132-Burundi
+89-Oman
+130-Congo DR
+79-Afghanistan
+136-Equatorial Guinea
+158-Belize
+19-Spain
+111-Chad
+21-Andorra
+194-Samoa
+168-Bahamas
+128-Guyana
+175-Suriname
+167-Barbados
+82-North Korea
+121-Liberia
+18-Netherlands
+62-Kyrgyzkstan
+126-Botswana
+173-Colombia
+71-Laos
+183-Australia
+50-Iran
+88-Saudi Arabia
+63-Uzbekistan
+14-Lietchenstein
+119-Ghana
+78-Indonesia
+157-El Salvador
+85-Maldives
+75-Thailand
+195-Solomon Islands
+180-Chile
+92-Bahrain
+66-Azerbajan
+116-Guinea-Bissau
+6-San Marino
+184-Papua New Guinea

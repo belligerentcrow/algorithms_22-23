@@ -1,4 +1,4 @@
-//creare con chiavi e dati satelliti 
+//creare con chiavi e dati satelliti -- ok
 
 #include <iostream>
 #include <cmath>

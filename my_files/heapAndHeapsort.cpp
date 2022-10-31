@@ -1,4 +1,9 @@
+// going to lunch but this is the error
+// https://stackoverflow.com/questions/20254996/understanding-error-terminate-called-after-throwing-an-instance-of-stdlength
+//check later
+
 //SWAP works by reference
+
 //gotta test heapsort
 //getting data from file works only if the delimitor is at the end of the line too.
 //if the delimitor isnt at the end, it will skip the last piece of data (authors)
@@ -9,6 +14,38 @@
 #include <cmath>
 #include <fstream>
 using namespace std; 
+
+class Songs{
+    private:
+        int key; 
+        string title; 
+        string author;
+    public: 
+        Songs(){}; 
+        Songs(int _k): key(_k){};
+        Songs(int _k, string _t, string _a): key(_k), title(_t), author(_a){};
+        //getters
+        int getKey(){
+            return this->key; 
+        } 
+        string getTitle(){
+            return this->title; 
+        }
+        string getAuthor(){
+            return this->author;
+        }
+
+        //setters
+        void setKey(int i){
+            this->key = i; 
+        }
+        void setTitle(string _t){
+            this->title = _t; 
+        }
+        void setAuthor(string _a){
+            this->author = _a; 
+        }
+};
 
 template <typename T>
 void swapp(T & one, T & two){
@@ -92,7 +129,9 @@ class minHeap{
             }
 
             if(smallest != i){
-                swap( arr.getEl(i), arr.getEl(smallest));
+                Songs & j = heapArray[i]; 
+                Songs & k = heapArray[smallest]; 
+                swapp(j, k); //pass by reference
                 arr.minHeapify(arr, smallest);
             }
         };
@@ -133,7 +172,7 @@ class minHeap{
             }
             heapArray[i] = key; 
             while((i >=0) && (((heapArray[getParent(i)]).getKey())>(heapArray[i].getKey()))){
-                swap(heapArray[i], heapArray[getParent(i)]);
+                swapp(heapArray[i], heapArray[getParent(i)]);
                 i = getParent(i); 
             }
         };
@@ -142,7 +181,9 @@ class minHeap{
         void heapsort(minHeap heapp, int n){
             buildMinHeap(heapp, n);
             for(int i = heapp.getLen(); i >=2; i--){
-                swapp(heapArray[0], heapArray[i]); 
+                Songs & j = heapArray[0]; 
+                Songs & k = heapArray[i]; 
+                swapp(j, k); //pass by reference
                 heapp.setHeapsize(heapp.getHeapsize()-1); 
                 minHeapify(heapp, 0); 
             }
@@ -151,37 +192,7 @@ class minHeap{
 
 };
 
-class Songs{
-    private:
-        int key; 
-        string title; 
-        string author;
-    public: 
-        Songs(){}; 
-        Songs(int _k): key(_k){};
-        Songs(int _k, string _t, string _a): key(_k), title(_t), author(_a){};
-        //getters
-        int getKey(){
-            return this->key; 
-        } 
-        string getTitle(){
-            return this->title; 
-        }
-        string getAuthor(){
-            return this->author;
-        }
 
-        //setters
-        void setKey(int i){
-            this->key = i; 
-        }
-        void setTitle(string _t){
-            this->title = _t; 
-        }
-        void setAuthor(string _a){
-            this->author = _a; 
-        }
-};
 
 Songs * songsFromFile(const string filename, int n){
     Songs * songsArr = new Songs[n];

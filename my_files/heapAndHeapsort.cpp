@@ -1,16 +1,23 @@
-//not sure if the swap works
+//SWAP works by reference
+//gotta test heapsort
+//getting data from file works only if the delimitor is at the end of the line too.
+//if the delimitor isnt at the end, it will skip the last piece of data (authors)
+
 
 #include <iostream>
 #include <climits>
 #include <cmath>
+#include <fstream>
 using namespace std; 
 
 template <typename T>
 void swapp(T & one, T & two){
-    T tmp = one; 
+    T & tmp = one; 
     one = two; 
     two = tmp; 
 };
+
+
 
 template <typename T>
 class minHeap{
@@ -30,6 +37,7 @@ class minHeap{
     public: 
         //constructors
         minHeap(int len): length(len){
+            heapArray = new T[len]; 
             heapsize = 0; 
         };
         minHeap(int len, T * arr, int n):length(len), heapArray(arr), heapsize(n){}; 
@@ -72,7 +80,7 @@ class minHeap{
         }
 
         //methods
-        void minHeapify(minHeap * arr, int i){
+        void minHeapify(minHeap arr, int i){
             int smallest = i; 
             int left = arr.getLeft(i);
             int right = arr.getRight(i); 
@@ -84,27 +92,28 @@ class minHeap{
             }
 
             if(smallest != i){
-                swap(arr.getEl(i), arr.getEl(smallest));
+                swap( arr.getEl(i), arr.getEl(smallest));
                 arr.minHeapify(arr, smallest);
             }
         };
 
-        void buildMinHeap(minHeap * arr, int arrLen){
-            arr.getHeapsize() = arrLen;
-            for(int i = floor(arrLen/2); i >=1; i--){
+        void buildMinHeap(minHeap arr, int arrLen){
+            arr.setHeapsize(arrLen);
+            for(int i = floor(arrLen/2); i >=0; i--){
                 minHeapify(arr, i);
             }
         };
 
         void minHeapInsert(T obj){
             cout << "calling decrease key1"<<endl; 
-            setHeapsize(getHeapsize()+1); 
+            
+            cout << "heapsize after +1:"<<getHeapsize()<<endl; 
             T newItem; //define empty constructor for heap object
             newItem.setKey(INT_MAX);
-            heapArray[getHeapsize()] = newItem;
+            heapArray[getHeapsize()] = INT_MAX; 
             cout << "calling decrease key2"<<endl; 
-            decreaseKey(getHeapsize(), obj.getKey()); 
-
+            decreaseKey(getHeapsize(), obj); 
+            setHeapsize(getHeapsize()+1);
         };
 
         T extractMin(){
@@ -119,11 +128,11 @@ class minHeap{
         };
 
         void decreaseKey(int i, T key){
-            if(key.getKey() < getEl(i).getKey()){
+            if(key.getKey() > getEl(i).getKey()){
                 cout << "ERROR"<<endl; 
             }
-            getEl(i).setKey(key.getKey()); 
-            while((i >1) && getEl(getParent(i)).getKey()>getEl(i).getKey()){
+            heapArray[i] = key; 
+            while((i >=0) && (((heapArray[getParent(i)]).getKey())>(heapArray[i].getKey()))){
                 swap(heapArray[i], heapArray[getParent(i)]);
                 i = getParent(i); 
             }
@@ -174,15 +183,71 @@ class Songs{
         }
 };
 
+Songs * songsFromFile(const string filename, int n){
+    Songs * songsArr = new Songs[n];
+    Songs song1; 
+    for(int i = 0; i<n; i++){
+        songsArr[i] = song1; 
+    } 
+    fstream file; 
+    string line; 
+    string dataItself; 
+    char delim = '-';
+    
+    file.open(filename); 
+    if(file.is_open()){
+        for(short i = 0; getline(file, line); i++){
+            size_t pos = 0; 
+            short counter = 0; 
+            while ((pos = line.find(delim)) != string::npos){
+            dataItself = line.substr(0, pos);
+            cout << dataItself<< " "<<line<<endl; 
+            line.erase(0, pos + 1);
+            switch(counter){
+                case 0:
+                    songsArr[i].setKey(stoi(dataItself));
+                    counter = 1; 
+                    break; 
+                case 1:
+                    songsArr[i].setTitle(dataItself); 
+                    counter = 2;
+                    break; 
+                case 2:
+                    songsArr[i].setAuthor(dataItself); 
+                    counter = 0; 
+                    break; 
+            }
+            }
+            cout <<"ENDL ENDL "<<endl<<endl; 
+        }
+    }
+    return songsArr; 
+}
+
 int main(){
-    int N = 20; 
+    /*int N = 21; 
     minHeap<Songs> myHeap(N);
-    for(int i =0; i < N; i++){
+    for(int i =0; i < N-1; i++){
         cout <<"song ID "<< i <<endl; 
         Songs mysong(i, "SongTitle1", "NoAuthor"); 
         myHeap.minHeapInsert(mysong);
     }
-    for(int i = 0; i < N; i++){
+    for(int i = 0; i < myHeap.getHeapsize(); i++){
     cout << (myHeap.getEl(i)).getKey()<<") "<< (myHeap.getEl(i)).getTitle()<<" - " <<(myHeap.getEl(i)).getAuthor()<<endl; 
+    }*/
+    int N = 40; 
+    Songs * songsArray = songsFromFile("randomizedSongData.txt", 30);
+    minHeap<Songs> mySecondHeap(N, songsArray, N);
+    cout << "done, maybe"<<endl; 
+
+    //NOW TEST!!
+    mySecondHeap.heapsort(mySecondHeap, N);
+    ofstream ordered; 
+    ordered.open("orderedSongs.txt", ios_base::app);
+    ordered << " ------ HEAPSORT!! ----------"<<endl; 
+    for(int i = 0; i < mySecondHeap.getHeapsize(); i++){
+    ordered << (mySecondHeap.getEl(i)).getKey()<<") "<< (mySecondHeap.getEl(i)).getTitle()<<" - " <<(mySecondHeap.getEl(i)).getAuthor()<<endl; 
     }
+    ordered.close(); 
+
 }

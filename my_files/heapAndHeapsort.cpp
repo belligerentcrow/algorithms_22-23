@@ -139,6 +139,7 @@ class minHeap{
         void buildMinHeap(minHeap arr, int arrLen){
             arr.setHeapsize(arrLen);
             for(int i = floor(arrLen/2); i >=0; i--){
+                cout<<"buildmin "<<i<<endl; 
                 minHeapify(arr, i);
             }
         };
@@ -181,6 +182,7 @@ class minHeap{
         void heapsort(minHeap heapp, int n){
             buildMinHeap(heapp, n);
             for(int i = heapp.getLen(); i >=2; i--){
+                cout <<" sort "<<i << endl; 
                 Songs & j = heapArray[0]; 
                 Songs & k = heapArray[i]; 
                 swapp(j, k); //pass by reference
@@ -253,6 +255,7 @@ int main(){
 
     //NOW TEST!!
     mySecondHeap.heapsort(mySecondHeap, N);
+    cout <<" Hello "<<endl; 
     ofstream ordered; 
     ordered.open("orderedSongs.txt", ios_base::app);
     ordered << " ------ HEAPSORT!! ----------"<<endl; 
